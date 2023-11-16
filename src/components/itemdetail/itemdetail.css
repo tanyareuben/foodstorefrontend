@@ -1,0 +1,84 @@
+.item-container {
+  margin-left: 50px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px; /* Adjust as per your modal size */
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.details-container {
+  padding: 15px;
+  text-align: center;
+}
+
+.details-container h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.price,
+.weight,
+.description {
+  color: #666;
+  margin: 5px 0;
+}
+
+.quantity-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.quantity-container button {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.quantity {
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.addbutton {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: transform 0.3s ease;
+}
+
+.addbutton:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+}
+
+.close-detail-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+  position: absolute;
+  top: 270px;
+  left: 460px;
+  transition: transform 0.3s ease;
+}
+.close-detail-button:hover {
+  transform: scale(1.3);
+}
