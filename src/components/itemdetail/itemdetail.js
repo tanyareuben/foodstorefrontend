@@ -20,7 +20,7 @@ function ItemDetail({ name, price, description, weight, image, onClose }) {
         X
       </button>
       <div className="image-container">
-        <img loading="lazy" src={image} alt={name} />
+        <img loading="lazy" src={`/food/${image}`} alt={name} />
       </div>
       <div className="details-container">
         <h3>{name}</h3>

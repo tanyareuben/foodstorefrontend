@@ -17,6 +17,7 @@ const CategoryItem = ({ selectedCategory, cart, setCart }) => {
     if (selectedCategory) {
       fetchItems();
     }
+    
 
     // Calculate the total item count in the cart
     const itemCount = cart.reduce((total, item) => total + item.count, 0);
@@ -105,17 +106,15 @@ const CategoryItem = ({ selectedCategory, cart, setCart }) => {
         ))}
       </div>
       {selectedItem && (
-        <div className="modal-overlay" onClick={handleClose}>
-          <div
-            className="item-detail-modal"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <ItemDetail
-              name={selectedItem.name}
-              price={selectedItem.price}
-              onClose={handleClose}
-            />
-          </div>
+  <div className="modal-overlay" onClick={handleClose}>
+    <div className="item-detail-modal" onClick={(e) => e.stopPropagation()}>
+      <ItemDetail
+        name={selectedItem.name}
+        price={selectedItem.price}
+        image={selectedItem.image} // Add this line
+        onClose={handleClose}
+      />
+    </div>
         </div>
       )}
     </div>
