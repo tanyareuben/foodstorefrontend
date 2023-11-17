@@ -76,7 +76,7 @@ const CategoryItem = ({ selectedCategory, cart, setCart }) => {
           >
             <div
               className="item-image"
-              style={{ backgroundImage: `url('/foodImages/${item.image}')` }}
+              style={{ backgroundImage: `url('/food/${item.image}')` }}
             >
               <img></img>
             </div>
