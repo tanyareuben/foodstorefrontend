@@ -21,6 +21,7 @@ body {
   margin-right: 8px; /* Reduced from 20px */
   margin-left: 5px; /* Reduced from 20px */
   padding-top: 35%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .store-name {
@@ -31,10 +32,11 @@ body {
   text-decoration: none;
   margin-top: 0;
   margin-bottom: 21px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .logo:hover,
 .store-name:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .sign-in-shopping-cart {
@@ -49,6 +51,7 @@ body {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .shopping-cart-icon {
@@ -56,12 +59,14 @@ body {
   margin-left: 20px; /* Add some spacing between the button and the cart icon */
   cursor: pointer;
   margin-top: 60px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .shopping-cart-icon:hover {
   transform: scale(1.2);
 }
 .loginbutton {
   margin-top: 45px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .loginbutton:hover {
   transform: scale(1.1);
@@ -133,6 +138,7 @@ li {
 .headers {
   color: #fff;
   text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .headers:hover {
   color: rgb(144, 189, 158);
@@ -190,6 +196,7 @@ li {
   right: 0;
   margin-top: -10px;
   font-size: 45px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .hamicon:hover {
   transform: scale(1.2);
@@ -209,6 +216,11 @@ li {
   font-size: 20px;
   padding-top: 10px;
 }
+.contentin:hover {
+  color: rgb(144, 189, 158);
+  transform: scale(1.05);
+}
+
 .cont {
   justify-content: left;
 }
