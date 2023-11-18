@@ -139,6 +139,7 @@
 }
 
 .item-detail-modal {
+  position: relative; 
   width: 60%; /* Adjust this value as needed */
   height: auto; /* Or specify a height */
   max-width: 500px; /* Optional: to prevent it from getting too large on wide screens */
@@ -150,3 +151,4 @@
   z-index: 1001;
   /* Add more styling as per your design */
 }
+
