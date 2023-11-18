@@ -8,6 +8,10 @@ import CategoryItem from "../../components/categoryitems/categoryitem";
 export default function HomePage() {
   return (
     <div className={styles.browsingpage}>
+      <link
+        href="https://fonts.googleapis.com/css?family=Cabin"
+        rel="stylesheet"
+      ></link>
       <div className={styles.backgroundgradient}></div>{" "}
       <div className={styles.imagebanner}>
         <img

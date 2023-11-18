@@ -25,8 +25,12 @@ export default function LoginPage() {
   }, [user, navigate, returnurl]);
 
   const submit = async ({ email, password }) => {
-    await login(email, password);
-    navigate("/");
+    try {
+      await login(email, password);
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -68,6 +72,11 @@ export default function LoginPage() {
           <button className={styles.loginbuttons} type="submit">
             Login
           </button>
+          <div className={styles.registerlink}>
+            <Link to={`/register${returnurl ? "?returnurl=" + returnurl : ""}`}>
+              Don't have an account? Register here.
+            </Link>
+          </div>
         </form>
       </div>
     </div>

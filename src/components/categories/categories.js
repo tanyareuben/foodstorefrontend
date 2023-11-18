@@ -39,6 +39,10 @@ function Categories({}) {
 
   return (
     <div className="categories-list-container">
+      <link
+        href="https://fonts.googleapis.com/css?family=Cabin"
+        rel="stylesheet"
+      ></link>
       <div className="category-list">
         <div className="scroll-arrow left-arrow" onClick={scrollLeft}>
           <img src="thumbnail/arrow-left.png" alt="Left Arrow" />

@@ -1,3 +1,4 @@
+//GETTING THE DATA FROM THE BACKEND
 //communication of frontend and back end
 import axios from "axios";
 
@@ -8,7 +9,7 @@ export const getUser = () =>
     : null;
 
 export const login = async (email, password) => {
-  const { data } = await axios.post("http://localhost:5001/api/user/login", {
+  const { data } = await axios.post("http://localhost:5001/api/users/login", {
     email,
     password,
   });
@@ -19,3 +20,36 @@ export const login = async (email, password) => {
 export const logout = () => {
   localStorage.removeItem("user");
 };
+
+export const register = async (registerData) => {
+  const { data } = await axios.post(
+    "http://localhost:5001/api/users/register",
+    registerData
+  );
+  localStorage.setItem("user", JSON.stringify(data));
+  return data;
+};
+
+export const isUserLoggedIn = async () => {
+  const user = getUser();
+  if (!user || !user.token) {
+    return false;
+  }
+  try {
+    // Here you would call an endpoint that verifies the token
+    const response = await axios.get(
+      "http://localhost:5001/api/users/validateToken",
+      {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      }
+    );
+    return response.data.isValid;
+  } catch (error) {
+    console.error("Token validation error:", error);
+    return false;
+  }
+};
+
+//create logout function
