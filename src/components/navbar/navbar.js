@@ -48,13 +48,14 @@ const Navbar = () => {
             {user ? (
               <>
                 <div className="logout-container">
-                  <a
+                  <CustomLink
                     href="#"
                     onClick={handleLogout}
                     className="contentin logout"
+                    to="/"
                   >
                     Logout
-                  </a>
+                  </CustomLink>
                 </div>
               </>
             ) : (

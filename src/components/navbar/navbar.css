@@ -212,12 +212,3 @@ li {
 .cont {
   justify-content: left;
 }
-
-.logout-container {
-  margin-top: -20px;
-  margin-bottom: 50px;
-}
-
-.contentin.logout {
-  display: block; /* or inline-block, adjust as needed */
-}
