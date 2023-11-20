@@ -224,3 +224,10 @@ li {
 .cont {
   justify-content: left;
 }
+.wholenavbar {
+  position: fixed; /* or absolute */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100; /* Higher than other content */
+}

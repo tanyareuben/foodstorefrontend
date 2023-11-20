@@ -15,3 +15,15 @@ export const getfoodCategory = async (category) => {
     return null;
   }
 };
+
+export const search = async (searchFood) => {
+  try {
+    const { data } = await axios.get(
+      "/api/foods/search/" + encodeURIComponent(searchFood)
+    );
+    return data;
+  } catch (error) {
+    console.error("Error during search:", error);
+    throw error;
+  }
+};

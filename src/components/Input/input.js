@@ -20,7 +20,7 @@ const Input = React.forwardRef(
       <InputContainer label={label}>
         <input
           defaultValue={defaultValue}
-          className={styles.input}
+          className={styles.input1}
           type={type}
           placeholder={label}
           ref={ref}
