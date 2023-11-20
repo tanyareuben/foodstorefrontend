@@ -1,0 +1,94 @@
+.aboutpage {
+  font-family: "Cabin";
+  display: flex;
+  text-align: center;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  min-height: 100vh;
+}
+h2 {
+  font-family: "Cabin";
+}
+
+.auth-form-container,
+.login-form,
+.register-form {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 600px) {
+}
+.auth-form-container {
+  padding: 2.8rem;
+  border: 8px solid #005823;
+  border-radius: 10px;
+  margin: 0.4rem;
+}
+label {
+  text-align: left;
+  font-family: "Cabin";
+  padding: 0.25rem 0;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+input {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: none;
+  background-color: rgb(243, 243, 243);
+  border-radius: 10px;
+}
+
+.loginbuttons {
+  border: none;
+  background-color: rgb(205, 221, 205); /*login button*/
+  padding: 20px;
+  border-radius: 10px;
+  font-family: "Cabin";
+  font-weight: bold;
+  cursor: pointer;
+  color: rgb(14, 74, 33);
+}
+
+.link-button {
+  padding-top: 15px;
+  text-decoration: underline;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #005823;
+}
+
+#title {
+  color: rgb(4, 73, 39);
+  font-family: "Cabin";
+  text-decoration: underline;
+}
+.about-us-container,
+.contact-container {
+  background-color: white;
+  font-weight: bold;
+  font-size: 20px;
+  max-width: 650px;
+  height: 400px;
+  border: 5px solid #005823;
+  padding: 20px;
+  color: #005823;
+  white-space: nowrap;
+}
+.info {
+  font-family: "Cabin";
+  font-size: 20px;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  min-width: 500px;
+}
+.wholeaboutpage {
+  font-family: "Cabin";
+  padding: 200px;
+  word-wrap: break-word;
+  background: linear-gradient(to bottom, rgb(205, 221, 205), white);
+}
