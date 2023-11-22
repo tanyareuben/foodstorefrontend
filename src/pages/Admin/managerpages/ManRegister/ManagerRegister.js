@@ -1,21 +1,23 @@
-import { useEffect } from "react";
+//MANAGER Register PAGE
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import Input from "../../components/Input/input";
+import Input from "../../../../components/Input/input";
 import { Link } from "react-router-dom";
 import { useSearchParams, useNavigate } from "react-router-dom";
-import { useAuth } from "../../hooks/useauth";
-import styles from "../Register/register.module.css";
+import { useAuth } from "../../../../hooks/useauth";
+import styles from "../ManRegister/manregister.module.css";
 
-export default function Register() {
+export default function ManagerRegister() {
   const auth = useAuth();
   const { user } = auth;
   const navigate = useNavigate();
   const [params] = useSearchParams();
   const returnurl = params.get("returnurl");
+  const [pinError, setPinError] = useState(""); // State to manage PIN validity
 
   useEffect(() => {
     if (!user) return;
-    returnurl ? navigate(returnurl) : navigate("/register");
+    returnurl ? navigate(returnurl) : navigate("/managerregister");
   }, [user]);
 
   const {
@@ -23,11 +25,36 @@ export default function Register() {
     register,
     getValues,
     formState: { errors },
+    setError,
   } = useForm();
 
   const submit = async (data) => {
-    await auth.register(data);
-    navigate("/");
+    try {
+      // Send the registration data including the PIN to the server
+      const response = await auth.register(data);
+
+      // Assuming your auth.register function and server respond with the right HTTP status code
+      // and message for a successful registration
+      if (response.isAdmin) {
+        // If the server response indicates the user is an admin, navigate to the dashboard
+        navigate("/ManagerMainPage/dashboard");
+      } else {
+        // If the server response indicates the user is not an admin, handle accordingly
+        setPinError(
+          "Registration successful. You are not registered as an admin."
+        );
+      }
+    } catch (error) {
+      // Handle errors, e.g., show a message if the registration fails
+      if (error.response && error.response.status === 401) {
+        // Specific handling for incorrect PIN
+        setPinError("Incorrect PIN. Please try again.");
+      } else {
+        // General error handling
+        setPinError("An error occurred during registration. Please try again.");
+      }
+      console.error("Registration error:", error);
+    }
   };
   return (
     <div className={styles.login}>
@@ -129,23 +156,34 @@ export default function Register() {
             })}
             error={errors.address}
           />
+          <Input
+            className="pininput"
+            type="text"
+            label="Manager PIN"
+            placeholder="Enter your PIN"
+            {...register("pin", {
+              required: "PIN is required to register as a manager",
+            })}
+            error={errors.pin}
+          />
+          {pinError && <p className={styles.error}>{pinError}</p>}
 
           <button className={styles.loginbuttons} type="submit">
             Register
           </button>
           <div className={styles.registerlink}>
-            <Link to={`/login${returnurl ? "?returnurl=" + returnurl : ""}`}>
-              Already have an account? Login here.
-            </Link>
-          </div>
-          <br></br>
-          <div className={styles.registerlink}>
             <Link
-              to={`/ManagerMainPage/managerlogin${
+              to={`/ManagerMainPage/managerregister${
                 returnurl ? "?returnurl=" + returnurl : ""
               }`}
             >
-              Admin Login Page
+              Already have an admin account? Login here.
+            </Link>
+          </div>
+          <br></br>
+          <div>
+            <Link to={`/login${returnurl ? "?returnurl=" + returnurl : ""}`}>
+              Customer Login Page
             </Link>
           </div>
         </form>

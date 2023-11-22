@@ -1,5 +1,5 @@
 .login {
-  background-image: linear-gradient(to bottom, rgb(205, 221, 205), white);
+  background-image: linear-gradient(to bottom, rgb(158, 182, 212), white);
   font-family: "Cabin";
   display: flex;
   text-align: center;
@@ -9,7 +9,7 @@
   align-items: center;
 
   justify-content: center;
-  color: rgb(14, 74, 33);
+  color: rgb(14, 30, 74);
   justify-content: center;
   height: 100vh;
 }
@@ -18,14 +18,14 @@
 
 .loginbuttons {
   border: none;
-  background-color: rgb(205, 221, 205); /*login button*/
+  background-color: rgb(14, 30, 74); /*login button*/
   padding: 20px;
   border-radius: 10px;
   font-family: "Cabin";
   font-weight: bold;
   font-size: 23px;
   cursor: pointer;
-  color: rgb(14, 74, 33);
+  color: rgb(255, 255, 255);
   align-items: center;
   width: 100%;
   margin-left: 20px;
@@ -44,7 +44,7 @@
   margin: auto;
   width: 30%;
   padding: 2.8rem;
-  border: 8px solid #005823;
+  border: 8px solid rgb(14, 30, 74);
   border-radius: 10px;
   margin: 0.4rem;
 }
@@ -58,6 +58,7 @@ h2 {
 .loginform {
   margin-right: 30px;
   justify-content: center;
+  color: rgb(14, 30, 74);
 }
 
 a {
@@ -68,8 +69,25 @@ a {
   border: none;
   background: none;
   cursor: pointer;
-  color: #005823;
+  color: rgb(4, 73, 39);
 }
 .registerlink {
   padding-bottom: 10px;
+}
+
+.pininput {
+  height: 100%;
+  width: 100%;
+  margin: 0.1rem;
+  padding: 20px;
+  border: none;
+  background-color: rgb(243, 243, 243);
+  border-radius: 10px;
+  transition: border-width 0.15s ease-out;
+  font-size: 16px;
+}
+
+.error {
+  color: rgb(255, 0, 0);
+  font-weight: bold;
 }

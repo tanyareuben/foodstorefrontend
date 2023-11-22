@@ -1,12 +1,12 @@
+import styles from "../ManagerLogin/manlogin.module.css";
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../hooks/useauth";
+import { useAuth } from "../../../../../hooks/useauth";
 import { useSearchParams, Link } from "react-router-dom";
-import styles from "../Login/login.module.css";
-import Input from "../../components/Input/input";
+import Input from "../../../../../components/Input/input";
 
-export default function LoginPage() {
+export default function ManagerLogin() {
   const {
     handleSubmit,
     register,
@@ -21,7 +21,7 @@ export default function LoginPage() {
   useEffect(() => {
     if (!user) return;
 
-    returnurl ? navigate(returnurl) : navigate("/login");
+    returnurl ? navigate(returnurl) : navigate("/ManagerMainPage/dashboard");
   }, [user, navigate, returnurl]);
 
   const submit = async ({ email, password }) => {
