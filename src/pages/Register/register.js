@@ -135,7 +135,7 @@ export default function Register() {
           </button>
           <div className={styles.registerlink}>
             <Link to={`/login${returnurl ? "?returnurl=" + returnurl : ""}`}>
-              Already have an account? Login here.
+              Already have a customer account? Login here.
             </Link>
           </div>
           <br></br>

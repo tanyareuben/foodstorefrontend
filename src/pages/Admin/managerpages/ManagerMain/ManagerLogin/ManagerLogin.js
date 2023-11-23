@@ -27,7 +27,7 @@ export default function ManagerLogin() {
   const submit = async ({ email, password }) => {
     try {
       await login(email, password);
-      navigate("/");
+      navigate("/ManagerMainPage/dashboard");
     } catch (err) {
       console.log(err);
     }

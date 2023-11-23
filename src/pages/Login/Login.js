@@ -74,7 +74,7 @@ export default function LoginPage() {
           </button>
           <div className={styles.registerlink}>
             <Link to={`/register${returnurl ? "?returnurl=" + returnurl : ""}`}>
-              Don't have an account? Register here.
+              Don't have a customer account? Register here.
             </Link>
           </div>
           <br></br>
