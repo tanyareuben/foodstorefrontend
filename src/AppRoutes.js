@@ -15,7 +15,7 @@ export default function AppRoutes() {
   const { user } = useAuth();
   const location = useLocation();
   const ProtectedRoute = ({ children }) => {
-    return user ? (
+    return user && user.isAdmin ? (
       children
     ) : (
       <Navigate
