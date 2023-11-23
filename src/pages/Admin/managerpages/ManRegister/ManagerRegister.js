@@ -173,7 +173,7 @@ export default function ManagerRegister() {
           </button>
           <div className={styles.registerlink}>
             <Link
-              to={`/ManagerMainPage/managerregister${
+              to={`/ManagerMainPage/managerlogin${
                 returnurl ? "?returnurl=" + returnurl : ""
               }`}
             >

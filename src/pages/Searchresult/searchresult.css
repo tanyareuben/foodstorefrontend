@@ -3,6 +3,7 @@
   font-family: "Cabin";
   color: rgb(14, 74, 33);
   background: linear-gradient(to bottom, rgb(205, 221, 205), white);
+  height: 100vh;
 }
 
 .search-result-item {
