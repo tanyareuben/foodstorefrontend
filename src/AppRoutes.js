@@ -10,6 +10,7 @@ import Contact from "./pages/Extra/Contact";
 import ManagerRegister from "./pages/Admin/managerpages/ManRegister/ManagerRegister";
 import ManagerLogin from "./pages/Admin/managerpages/ManagerMain/ManagerLogin/ManagerLogin";
 import Dashboard from "./pages/Admin/managerpages/ManagerMain/Dashboard.js";
+import ProductManagement from "./pages/Admin/managerpages/ManagerMain/ManagerProduct/ManagerProduct.js";
 
 export default function AppRoutes() {
   const { user } = useAuth();
@@ -18,11 +19,8 @@ export default function AppRoutes() {
     return user && user.isAdmin ? (
       children
     ) : (
-      <Navigate
-        to="/ManagerMainPage/managerlogin"
-        replace
-        state={{ from: location }}
-      />
+      // Redirect non-manager users to a different route (e.g., customer login)
+      <Navigate to="/login" replace state={{ from: location }} />
     );
   };
   return (
@@ -42,6 +40,10 @@ export default function AppRoutes() {
       <Route
         path="/ManagerMainPage/dashboard"
         element={ProtectedRoute({ children: <Dashboard /> })}
+      />
+      <Route
+        path="/ManagerMainPage/product-management"
+        element={ProtectedRoute({ children: <ProductManagement /> })}
       />
     </Routes>
   );

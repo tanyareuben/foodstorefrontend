@@ -27,7 +27,15 @@ export default function Register() {
 
   const submit = async (data) => {
     await auth.register(data);
-    navigate("/");
+    try {
+      if (user.isAdmin === true) {
+        navigate("/ManagerMainPage/dashboard");
+      } else {
+        navigate("/");
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <div className={styles.login}>

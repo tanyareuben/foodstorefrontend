@@ -21,7 +21,7 @@ export default function ManagerLogin() {
   useEffect(() => {
     if (!user) return;
 
-    returnurl ? navigate(returnurl) : navigate("/ManagerMainPage/dashboard");
+    returnurl ? navigate(returnurl) : navigate("/ManagerMainPage/managerlogin");
   }, [user, navigate, returnurl]);
 
   const submit = async ({ email, password }) => {

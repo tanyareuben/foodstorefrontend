@@ -27,7 +27,11 @@ export default function LoginPage() {
   const submit = async ({ email, password }) => {
     try {
       await login(email, password);
-      navigate("/");
+      if (user.isAdmin === true) {
+        navigate("/ManagerMainPage/dashboard");
+      } else {
+        navigate("/");
+      }
     } catch (err) {
       console.log(err);
     }

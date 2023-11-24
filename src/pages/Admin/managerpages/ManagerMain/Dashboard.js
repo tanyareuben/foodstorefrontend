@@ -1,5 +1,6 @@
 import React from "react";
 import "../../ManagerStyling/Dashboard.css";
+import ManagerSidebar from "./ManagerSidebar/ManagerSidebar";
 
 const Dashboard = () => {
   // Example data for dashboard metrics
@@ -11,6 +12,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
+      <ManagerSidebar />
       <h1>Manager Dashboard</h1>
       <div className="metrics">
         <div className="metric-box">
