@@ -1,0 +1,19 @@
+.product-management {
+  padding: 20px;
+  margin-top: 65px; /* Adjust if needed based on your header's height */
+  margin-left: 250px; /* Same width as the sidebar */
+}
+
+.product-management h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.product-list p {
+  background-color: #adadad;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+/* Add more styles as needed */
