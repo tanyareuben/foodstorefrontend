@@ -77,7 +77,8 @@ const CategoryItem = ({ selectedCategory, cart, setCart }) => {
           >
             <div
               className="item-image"
-              style={{ backgroundImage: `url('/food/${item.image}')` }}
+              style={{ backgroundImage: `url('${item.images[0].imageLink}')` }}
+              
             >
               <img></img>
             </div>
@@ -106,18 +107,20 @@ const CategoryItem = ({ selectedCategory, cart, setCart }) => {
         ))}
       </div>
       {selectedItem && (
-  <div className="modal-overlay" onClick={handleClose}>
-    <div className="item-detail-modal" onClick={(e) => e.stopPropagation()}>
-      <ItemDetail
-        name={selectedItem.name}
-        price={selectedItem.price}
-        image={selectedItem.image} // Add this line
-        onClose={handleClose}
-      />
-    </div>
-        </div>
-      )}
-    </div>
+        <div className="modal-overlay" onClick={handleClose}>
+          <div className="item-detail-modal" onClick={(e) => e.stopPropagation()}>
+            <ItemDetail
+              name={selectedItem.name}
+              price={selectedItem.price}
+              image={selectedItem.images[0].imageLink} // Add this line
+              weight={selectedItem.weight}
+              description={selectedItem.description}
+              onClose={handleClose}
+            />
+          </div>
+          </div>
+        )}
+      </div>
   );
 };
 export default CategoryItem;

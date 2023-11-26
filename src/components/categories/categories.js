@@ -5,14 +5,14 @@ import CategoryItem from "../categoryitems/categoryitem";
 function Categories({}) {
   const [cart, setCart] = useState([]);
   const categoriesData = [
-    { id: 1, name: "Pantry", image: "pantry.png" },
-    { id: 2, name: "Vegetables", image: "broccoli2.png" },
-    { id: 3, name: "Fruits", image: "orange.png" },
-    { id: 4, name: "Proteins", image: "meat.png" },
-    { id: 5, name: "Grains", image: "wheat.png" },
+    { id: 1, name: "PANTRY_STAPLES", image: "pantry.png" },
+    { id: 2, name: "VEGETABLE", image: "broccoli2.png" },
+    { id: 3, name: "FRUIT", image: "orange.png" },
+    { id: 4, name: "MEAT", image: "meat.png" },
+    { id: 5, name: "GRAIN", image: "wheat.png" },
     { id: 6, name: "Beverages", image: "lemonade.png" },
-    { id: 7, name: "Dairy", image: "cheese.png" },
-    { id: 8, name: "Sea Food", image: "seafood.png" },
+    { id: 7, name: "DAIRY", image: "cheese.png" },
+    { id: 8, name: "SEAFOOD", image: "seafood.png" },
     // Add more categories as needed
   ];
 

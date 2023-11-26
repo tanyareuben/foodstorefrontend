@@ -9,7 +9,7 @@ export const getUser = () =>
     : null;
 
 export const login = async (email, password) => {
-  const { data } = await axios.post("http://localhost:5001/api/users/login", {
+  const { data } = await axios.post("/users/login", {
     email,
     password,
   });
@@ -23,7 +23,7 @@ export const logout = () => {
 
 export const register = async (registerData) => {
   const { data } = await axios.post(
-    "http://localhost:5001/api/users/register",
+    "/users/register",
     registerData
   );
   localStorage.setItem("user", JSON.stringify(data));
