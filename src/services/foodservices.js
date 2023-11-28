@@ -28,3 +28,13 @@ export const search = async (searchFood) => {
     throw error;
   }
 };
+
+export const addNewItem = async (newItem) => {
+  try {
+    const { data } = await axios.post("/api/foods", newItem); // Adjust the URL as needed
+    return data;
+  } catch (error) {
+    console.error("Error adding new item:", error);
+    throw error; // Throwing the error so it can be handled where the function is called
+  }
+};
